@@ -1,4 +1,4 @@
-;(function () {
+; (function () {
 	const gamePanel = document.getElementById('panel')
 	const resetBtn = document.getElementById('resetBtn')
 	const step = document.getElementById('step')
@@ -85,7 +85,7 @@
 				// 判断滑动方向
 				let rowD = Math.abs(moveStartLeft - moveEndLeft)
 				let colD = Math.abs(moveStartTop - moveEndTop)
-				if (rowD === colD || Math.max(rowD, colD) < 100) {
+				if (rowD === colD || Math.max(rowD, colD) < 50) {
 					return
 				}
 				let isUpOrDown = rowD < colD
@@ -94,8 +94,8 @@
 						? 'down'
 						: 'top'
 					: moveStartLeft < moveEndLeft
-					? 'right'
-					: 'left'
+						? 'right'
+						: 'left'
 				// 合并
 				let canMerge = checkMergeBlocks(direction)
 				// 移动
